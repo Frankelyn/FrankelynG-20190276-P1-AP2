@@ -15,7 +15,7 @@ import androidx.navigation.NavHostController
 
 @Composable
 fun RegistroPrestamosScreen(
-    //navHostController: NavHostController
+    navHostController: NavHostController
 ) {
 
     var txDeudor by rememberSaveable {
@@ -33,7 +33,9 @@ fun RegistroPrestamosScreen(
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /*TODO*/ })
+                onClick = {
+                    navHostController.navigateUp()
+                })
             {
                 Icon(imageVector = Icons.Default.Save, contentDescription = null)
             }
@@ -103,6 +105,6 @@ fun RegistroPrestamosScreen(
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun RegistroPrestamosScreenPreview() {
-    RegistroPrestamosScreen()
+    //RegistroPrestamosScreen()
 
 }

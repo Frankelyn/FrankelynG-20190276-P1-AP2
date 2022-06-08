@@ -30,7 +30,7 @@ fun RowPrestamos(prestamo: Prestamo) {
 
 @Composable
 fun ConsultaRegistroPrestamosScreen(
-    //navHostController: NavHostController
+    navHostController: NavHostController
 ) {
 
     Scaffold(
@@ -70,5 +70,5 @@ fun ConsultaRegistroPrestamosScreen(
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun ConsultaColoresScreenPreview() {
-    ConsultaRegistroPrestamosScreen()
+    //ConsultaRegistroPrestamosScreen()
 }

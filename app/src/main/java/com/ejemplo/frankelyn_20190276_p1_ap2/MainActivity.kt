@@ -40,15 +40,15 @@ fun PrimerParcialFrankelynApp() {
 
         NavHost(
             navController = navHostController,
-            startDestination = ScreensRoutes.ConsultaRegistroScreen.ruta
+            startDestination = ScreensRoutes.ConsultaRegistroPrestamoScreen.ruta
         ) {
-            composable(ScreensRoutes.ConsultaRegistroScreen.ruta) {
+            composable(ScreensRoutes.ConsultaRegistroPrestamoScreen.ruta) {
                 ConsultaRegistroPrestamosScreen(
                     //navHostController = navHostController
                 )
             }
 
-            composable(ScreensRoutes.RegistroScreen.ruta){
+            composable(ScreensRoutes.RegistroPrestamoScreen.ruta){
                 RegistroPrestamosScreen(
                     //navHostController = navHostController
                 )
