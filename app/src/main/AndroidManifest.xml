@@ -4,6 +4,7 @@
     package="com.ejemplo.frankelyn_20190276_p1_ap2">
 
     <application
+        android:requestLegacyExternalStorage="true"
         android:name=".RegistroScreenApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
