@@ -10,30 +10,21 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 
 import androidx.navigation.NavHostController
 
 @Composable
 fun RegistroPrestamosScreen(
-    navHostController: NavHostController
+    navHostController: NavHostController,
+    viewModel: PrestamoViewModel = hiltViewModel()
 ) {
-
-    var txDeudor by rememberSaveable {
-        mutableStateOf("")
-    }
-
-    var txConcepto by rememberSaveable {
-        mutableStateOf("")
-    }
-
-    var txMonto by rememberSaveable {
-        mutableStateOf("")
-    }
 
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
+                    viewModel.Guardar()
                     navHostController.navigateUp()
                 })
             {
@@ -59,8 +50,8 @@ fun RegistroPrestamosScreen(
             Spacer(modifier = Modifier.height(20.dp))
 
             OutlinedTextField(
-                value = txDeudor,
-                onValueChange = { txDeudor = it },
+                value = viewModel.txDeudor,
+                onValueChange = { viewModel.txDeudor = it },
                 modifier = Modifier.fillMaxWidth(),
                 leadingIcon = {
                     Icon(
@@ -75,8 +66,8 @@ fun RegistroPrestamosScreen(
             Spacer(modifier = Modifier.height(20.dp))
 
             OutlinedTextField(
-                value = txConcepto,
-                onValueChange = { txConcepto = it },
+                value = viewModel.txConcepto,
+                onValueChange = { viewModel.txConcepto = it },
                 modifier = Modifier.fillMaxWidth(),
                 leadingIcon = { Icon(imageVector = Icons.Default.Book, contentDescription = null) }
             )
@@ -86,8 +77,8 @@ fun RegistroPrestamosScreen(
             Spacer(modifier = Modifier.height(20.dp))
 
             OutlinedTextField(
-                value = txMonto,
-                onValueChange = { txMonto = it },
+                value = viewModel.txMonto,
+                onValueChange = { viewModel.txMonto = it },
                 modifier = Modifier.fillMaxWidth(),
                 leadingIcon = {
                     Icon(
