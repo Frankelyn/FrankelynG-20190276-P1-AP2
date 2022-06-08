@@ -11,11 +11,11 @@ class PrestamoRepository @Inject constructor(
         prestamoDao.insertar(prestamo)
     }
 
-    suspend fun buscar(id: Int){
+    fun buscar(id: Int){
         prestamoDao.buscar(id)
     }
 
-    suspend fun GetList(){
+    fun GetList(){
         prestamoDao.GetList()
     }
 
