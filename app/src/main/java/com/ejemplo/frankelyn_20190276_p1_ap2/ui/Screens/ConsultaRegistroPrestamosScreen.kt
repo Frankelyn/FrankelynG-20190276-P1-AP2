@@ -13,13 +13,15 @@ import com.ejemplo.frankelyn_20190276_p1_ap2.ui.Navigation.ScreensRoutes
 
 
 @Composable
-fun ConsultaRegistroScreen(navHostController: NavHostController) {
+fun ConsultaRegistroPrestamosScreen(
+    //navHostController: NavHostController
+) {
 
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-                    navHostController.navigate(ScreensRoutes.RegistroScreen.ruta)
+                    //navHostController.navigate(ScreensRoutes.RegistroScreen.ruta)
                 })
             {
                 Icon(imageVector = Icons.Default.Add, contentDescription = null)
@@ -41,5 +43,5 @@ fun ConsultaRegistroScreen(navHostController: NavHostController) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun ConsultaColoresScreenPreview() {
-    //ConsultaRegistroScreen()
+    ConsultaRegistroPrestamosScreen()
 }

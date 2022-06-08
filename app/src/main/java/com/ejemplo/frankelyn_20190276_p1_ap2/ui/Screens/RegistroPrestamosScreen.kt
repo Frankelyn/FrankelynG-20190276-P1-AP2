@@ -19,7 +19,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 
 @Composable
-fun RegistroScreen(navHostController: NavHostController) {
+fun RegistroPrestamosScreen(
+    //navHostController: NavHostController
+) {
 
     Column() {
 
@@ -28,7 +30,7 @@ fun RegistroScreen(navHostController: NavHostController) {
         OutlinedButton(
 
             onClick = {
-                navHostController.navigateUp()
+                //navHostController.navigateUp()
             }
         ) {
             Text(text = "Guardar")
@@ -41,6 +43,6 @@ fun RegistroScreen(navHostController: NavHostController) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun RegistroScreenPreview() {
-   // RegistroScreen()
+   RegistroPrestamosScreen()
 
 }

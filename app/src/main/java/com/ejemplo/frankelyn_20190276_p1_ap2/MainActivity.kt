@@ -14,8 +14,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.ejemplo.frankelyn_20190276_p1_ap2.ui.Navigation.ScreensRoutes
-import com.ejemplo.frankelyn_20190276_p1_ap2.ui.Screens.ConsultaRegistroScreen
-import com.ejemplo.frankelyn_20190276_p1_ap2.ui.Screens.RegistroScreen
+import com.ejemplo.frankelyn_20190276_p1_ap2.ui.Screens.ConsultaRegistroPrestamosScreen
+import com.ejemplo.frankelyn_20190276_p1_ap2.ui.Screens.RegistroPrestamosScreen
+
 import com.ejemplo.frankelyn_20190276_p1_ap2.ui.theme.Frankelyn20190276P1AP2Theme
 
 class MainActivity : ComponentActivity() {
@@ -42,11 +43,15 @@ fun PrimerParcialFrankelynApp() {
             startDestination = ScreensRoutes.ConsultaRegistroScreen.ruta
         ) {
             composable(ScreensRoutes.ConsultaRegistroScreen.ruta) {
-                ConsultaRegistroScreen(navHostController = navHostController)
+                ConsultaRegistroPrestamosScreen(
+                    //navHostController = navHostController
+                )
             }
 
             composable(ScreensRoutes.RegistroScreen.ruta){
-                RegistroScreen(navHostController = navHostController)
+                RegistroPrestamosScreen(
+                    //navHostController = navHostController
+                )
             }
 
         }
