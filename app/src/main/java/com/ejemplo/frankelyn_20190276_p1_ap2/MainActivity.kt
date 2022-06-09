@@ -18,7 +18,9 @@ import com.ejemplo.frankelyn_20190276_p1_ap2.ui.Screens.ConsultaRegistroPrestamo
 import com.ejemplo.frankelyn_20190276_p1_ap2.ui.Screens.RegistroPrestamosScreen
 
 import com.ejemplo.frankelyn_20190276_p1_ap2.ui.theme.Frankelyn20190276P1AP2Theme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,13 +46,13 @@ fun PrimerParcialFrankelynApp() {
         ) {
             composable(ScreensRoutes.ConsultaRegistroPrestamoScreen.ruta) {
                 ConsultaRegistroPrestamosScreen(
-                    //navHostController = navHostController
+                    navHostController = navHostController
                 )
             }
 
             composable(ScreensRoutes.RegistroPrestamoScreen.ruta){
                 RegistroPrestamosScreen(
-                    //navHostController = navHostController
+                    navHostController = navHostController
                 )
             }
 
