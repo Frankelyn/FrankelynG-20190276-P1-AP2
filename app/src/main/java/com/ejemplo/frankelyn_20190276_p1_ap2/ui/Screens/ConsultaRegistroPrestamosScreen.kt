@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.ejemplo.frankelyn_20190276_p1_ap2.model.Prestamo
 import com.ejemplo.frankelyn_20190276_p1_ap2.ui.Navigation.ScreensRoutes
@@ -30,8 +31,11 @@ fun RowPrestamos(prestamo: Prestamo) {
 
 @Composable
 fun ConsultaRegistroPrestamosScreen(
-    navHostController: NavHostController
+    navHostController: NavHostController,
+    viewModel: PrestamoViewModel = hiltViewModel()
 ) {
+
+    var listaPrestamos = viewModel.listaPrestamos.collectAsState(initial = emptyList())
 
     Scaffold(
         floatingActionButton = {
