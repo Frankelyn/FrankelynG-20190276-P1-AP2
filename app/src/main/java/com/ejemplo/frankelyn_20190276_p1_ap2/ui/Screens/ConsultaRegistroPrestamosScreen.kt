@@ -2,10 +2,12 @@ package com.ejemplo.frankelyn_20190276_p1_ap2.ui.Screens
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -18,14 +20,17 @@ import com.ejemplo.frankelyn_20190276_p1_ap2.ui.Navigation.ScreensRoutes
 
 @Composable
 fun RowPrestamos(prestamo: Prestamo) {
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceBetween
+    Column() {
+        Row(
+            modifier = Modifier.fillMaxWidth()
         ) {
 
-        Text(prestamo.deudor)
-        Text(prestamo.monto.toString())
+            Text(prestamo.deudor)
+            Text(prestamo.monto.toString())
 
+        }
+
+        Text(prestamo.concepto)
     }
 }
 
@@ -35,13 +40,13 @@ fun ConsultaRegistroPrestamosScreen(
     viewModel: PrestamoViewModel = hiltViewModel()
 ) {
 
-    var listaPrestamos = viewModel.listaPrestamos.collectAsState(initial = emptyList())
+    var listaPrestamos = viewModel.listaPrestamos.collectAsState(initial= emptyList())
 
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-                    //navHostController.navigate(ScreensRoutes.RegistroScreen.ruta)
+                    navHostController.navigate(ScreensRoutes.RegistroPrestamoScreen.ruta)
                 })
             {
                 Icon(imageVector = Icons.Default.Add, contentDescription = null)
@@ -63,7 +68,9 @@ fun ConsultaRegistroPrestamosScreen(
 
             LazyColumn(modifier = Modifier.fillMaxWidth())
             {
-
+                items(listaPrestamos.value){  prestamo ->
+                    RowPrestamos(prestamo = prestamo)
+                }
             }
 
         }
